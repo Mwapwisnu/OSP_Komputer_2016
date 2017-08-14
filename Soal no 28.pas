@@ -13,7 +13,7 @@ uses crt;
             n2:=n-2;
             n3:=n-4;
             noan := noan(n1) + noan (n2) + noan (n3);
-	    writeln('noan = noan(',n1,') + noan(',n2,') + noan (',noan,') ');
+	     writeln('noan 1 (',n1,') + noan 2 (',n2,') + noan 3 (',n3,') = noan ',n,' (',noan,') ');
        end;
   end;
  begin
