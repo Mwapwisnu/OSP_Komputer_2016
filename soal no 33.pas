@@ -1,8 +1,8 @@
 Program OSP_30_16;
 Uses crt;
    var
-   arr: array [1..20] of integer;
-
+   arr: array [1..20] of integer;// = (303, 304, 365, 454, 487, 6, 12, 15, 78, 90,
+                                 //    155, 169, 183, 205, 209, 218, 5, 269, 282, 287);
    function get:integer;
    var
       m: integer;
@@ -16,29 +16,38 @@ Uses crt;
      end
      else
      writeln('===================================');
+     begin
+         left := 1;
+         right := 20;
+     while (left < right)do
         begin
-           left := 1;
-           right := 20;
-           while (left < right)do
-            begin
+            writeln('  left                    right  ');
+            writeln('   ',left,'                       ',right);
+            writeln('   ',arr[left],'                       ',arr[right]);
+        m := (left+right) div 2;
+        hsl_div := m;
+        jml_lr := left+right;
+               //writeln;
+            writeln('      jml_lr = ',left,' + ',right,' = ',jml_lr);
             writeln;
-            writeln('  left   right  ');
-            writeln('   ',left,'       ',right);
-               m := (left+right) div 2;
-               hsl_div := m;
-               jml_lr := left+right;
-               writeln;
-               writeln('  m := ',jml_lr,' div 2 = ',hsl_div);
-               writeln;
-               if (arr[1]<=arr[m])then
+            writeln('        m := ',jml_lr,' div 2 = ',hsl_div);
+               //writeln;
+             if (arr[1]<=arr[m])then
                   left := m+1
                else
                   right := m;
-            writeln;
+            
             writeln('  arr[m] = ',arr[m],' maka  m = ',m);
             writeln('===================================');
-            writeln('  arr[m] = ',arr[m],' ',', left = ',left,', right = ',right);
-            end;
+               for i :=1 to 20 do
+                  begin
+                     write;
+                     write(arr[i],' ');
+                     write;
+                  end;
+            writeln;
+            writeln(' left = ',left,           ' , right = ',right);
+        end;
         get := right;
         writeln();
         writeln('jadi get = ',get);
@@ -59,5 +68,3 @@ begin
   writeln(get);
   readln();
 end.
-
-
